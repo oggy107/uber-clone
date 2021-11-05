@@ -52,40 +52,34 @@
 
         & .homeActionBtnsContainer {
             width: 100%;
-            height: 6rem;
-            // display: flex;
-            // justify-content: space-between;
+            // height: 6rem;
             display: grid;
+            row-gap: 1rem;
+            margin-bottom: 2rem;
             grid-template-columns: repeat(3, 1fr);
 
-            
             & .homeSingleActionBtnContainer {
-                flex: 1;
-                background-color: rgb(255, 173, 186);
+                height: 100%;
                 margin: 0 10px;
-                padding: 10px;
-                border: none;
-                border-radius: 15px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
                 @include transition-ease;
 
-                &:first-child {
-                    margin-left: 0;
-                }
+                // &:first-child {
+                //     margin-left: 0;
+                // }
 
-                &:last-child {
-                    margin-right: 0;
-                }
+                // &:last-child {
+                //     margin-right: 0;
+                // }
 
                 &:hover {
                     transform: scale(1.1);
                 }
 
                 & .homeActionBtnImg {
-                    width: 50%;
+                    width: 65%;
                     height: auto;
                 }
 
@@ -94,6 +88,15 @@
                 }
             }
         }
+    }
+
+    & .homeWhereToBtn {
+        width: 100%;
+        text-align: left;
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 5px;
     }
 }
 

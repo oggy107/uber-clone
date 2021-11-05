@@ -1,12 +1,13 @@
 import React from 'react'
 
-import actionBtns from '../../assets/files/actionBtns'
+import actionBtns from '../assets/files/actionBtns'
 
 const HomeBody = () => {
     return (
         <div className="homeBody">
             <Header />
             <ActionButtons />
+            <button className="btn homeWhereToBtn">Where to?</button>
         </div>
     )
 }
@@ -31,7 +32,7 @@ const ActionButtons = () => {
             {
                 actionBtns.map((btn, index) => {
                     return (
-                        <button className='homeSingleActionBtnContainer' key={index}>
+                        <button className='btn homeSingleActionBtnContainer' key={index}>
                             <img className="homeActionBtnImg" src={btn.img} alt={btn.title}/>
                             <h4 className="homeActionBtnTitle">{btn.title}</h4>
                         </button>
