@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+// common resets
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// common mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: cneter;
+    align-items: center;
+}
+
+@mixin transition-ease {
+    transition: all 0.3s ease-in-out;
+}
+
+// mobile screen
+@mixin media-mobile {
+    @media screen and (min-width: 800px){
+        @content
+    };
+}
