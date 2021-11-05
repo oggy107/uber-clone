@@ -31,10 +31,10 @@ const ActionButtons = () => {
             {
                 actionBtns.map((btn, index) => {
                     return (
-                        <div className='homeSingleActionBtnContainer' key={index}>
+                        <button className='homeSingleActionBtnContainer' key={index}>
                             <img className="homeActionBtnImg" src={btn.img} alt={btn.title}/>
                             <h4 className="homeActionBtnTitle">{btn.title}</h4>
-                        </div>
+                        </button>
                     )
                 })
             }
