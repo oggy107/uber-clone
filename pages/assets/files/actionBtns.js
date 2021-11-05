@@ -10,5 +10,5 @@ export default [
     {
         title: 'Reserve',
         img: 'https://i.ibb.co/5RjchBg/uberschedule.png'
-    },
+    }
 ]
