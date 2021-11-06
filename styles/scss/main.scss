@@ -1,5 +1,6 @@
 @import './config';
 @import './components/home';
+@import './components/search';
 
 // common components
 .btn {
@@ -10,4 +11,13 @@
     border: none;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.input {
+    padding: 7px 5px;
+    font-family: 'Nunito' sans-serif;
+    font-size: .9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 173, 186);
 }

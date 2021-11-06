@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import actionBtns from '../assets/files/actionBtns'
 
@@ -7,7 +8,7 @@ const HomeBody = () => {
         <div className="homeBody">
             <Header />
             <ActionButtons />
-            <button className="btn homeWhereToBtn">Where to?</button>
+            <button className="btn homeWhereToBtn" onClick={() => {Link}}>Where to?</button>
         </div>
     )
 }
@@ -32,10 +33,12 @@ const ActionButtons = () => {
             {
                 actionBtns.map((btn, index) => {
                     return (
-                        <button className='btn homeSingleActionBtnContainer' key={index}>
-                            <img className="homeActionBtnImg" src={btn.img} alt={btn.title}/>
-                            <h4 className="homeActionBtnTitle">{btn.title}</h4>
-                        </button>
+                        <Link href="search">
+                            <button className='btn homeSingleActionBtnContainer' key={index}>
+                                <img className="homeActionBtnImg" src={btn.img} alt={btn.title}/>
+                                <h4 className="homeActionBtnTitle">{btn.title}</h4>
+                            </button>
+                        </Link>
                     )
                 })
             }
