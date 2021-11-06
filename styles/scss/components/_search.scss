@@ -1,19 +1,27 @@
-.searchContainer {
-    padding: 10px;
+.searchMajorContainer {
     width: 100%;
     height: 100vh;
+    background-color: rgb(200, 200, 200);
+}
+
+.searchMinorContainer {
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
     font-family: 'Nunito', sans-serif;
 
     & .searchBackBtn {
-        width: 3.5rem;
+        width: 100%;
         height: 3.5rem;
         border-radius: 0;
         box-shadow: none;
+        padding: 0;
         cursor: pointer;
-        background-color: transparent;
-
+        background-color: #fff;
+        display: flex;
         & img {
-            width: 100%;
+            width: 10%;
             height: auto;
         }
     }
@@ -80,6 +88,7 @@
         font-size: larger;
         border-radius: 5px;
         width: 100%;
+        margin-bottom: 1rem;
         cursor: pointer;
         @include transition-ease;
 

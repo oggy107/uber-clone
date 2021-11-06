@@ -33,7 +33,7 @@ const ActionButtons = () => {
             {
                 actionBtns.map((btn, index) => {
                     return (
-                        <Link href="search">
+                        <Link href={btn.href}>
                             <button className='btn homeSingleActionBtnContainer' key={index}>
                                 <img className="homeActionBtnImg" src={btn.img} alt={btn.title}/>
                                 <h4 className="homeActionBtnTitle">{btn.title}</h4>
