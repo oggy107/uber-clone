@@ -62,6 +62,9 @@
                 height: 100%;
                 margin: 0 10px;
                 display: flex;
+                padding: 10px;
+                background-color: rgb(255, 121, 143);
+                border-radius: 10px;
                 flex-direction: column;
                 align-items: center;
                 @include transition-ease;
@@ -83,9 +86,9 @@
                     height: auto;
                 }
 
-                & .homeActionBtnTitle {
-                    font-family: 'Nunito', sans-serif;
-                }
+                // & .homeActionBtnTitle {
+                //     font-family: 'Nunito', sans-serif;
+                // }
             }
         }
     }
@@ -93,10 +96,8 @@
     & .homeWhereToBtn {
         width: 100%;
         text-align: left;
-        font-family: 'Nunito', sans-serif;
         font-weight: bold;
         font-size: 1.1rem;
-        border-radius: 5px;
     }
 }
 

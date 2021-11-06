@@ -6,11 +6,16 @@
 .btn {
     width: fit-content;
     height: fit-content;
-    background-color: rgb(255, 173, 186);
-    padding: 10px;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: 2rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    @include transition-ease;
+    box-sizing: border-box;
 }
 
 .input {

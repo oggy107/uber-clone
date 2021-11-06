@@ -8,9 +8,11 @@ const search = () => {
         <div className="searchMajorContainer">
             <div className="searchMinorContainer">
                 <Link href="/" >
-                    <button className="btn searchBackBtn">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/left.png" alt="back"/>
-                    </button>
+                    <div className="searchBackBtnContainer">
+                        <button className="btn searchBackBtn">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/left.png" alt="back"/>
+                        </button>
+                    </div>
                 </Link>
                 <SearchForm />
                 <div className="searchSavedPlacesContainer">
