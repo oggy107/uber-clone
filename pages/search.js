@@ -21,7 +21,9 @@ const search = () => {
                     </div>
                     <h3>Saved Places</h3>
                 </div>
-                <button className="btn searchConfirmBtn">Confirm Locations</button>
+                <Link href="/confirm">
+                    <button className="btn searchConfirmBtn">Confirm Locations</button>
+                </Link>
             </div>
         </div>
     )
