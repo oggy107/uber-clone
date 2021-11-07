@@ -1,12 +1,11 @@
 .homeContainer {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
     & .homeMap {
         flex: 1;
-        border-radius: 0 0 25px 25px;
     }
 
     & .homeBody {

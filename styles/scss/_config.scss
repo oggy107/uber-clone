@@ -2,12 +2,18 @@
 
 // color palette
 $primary-color: #c0c0c8;
+$uber-blue: #276EF1;
 
 // common resets
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body, html, #root, #__next {
+    height: 100%;
+    width: 100%;
 }
 
 // common mixins
