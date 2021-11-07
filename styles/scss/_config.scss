@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
+// color palette
+$primary-color: #c0c0c8;
+$uber-blue: #276EF1;
+
 // common resets
 * {
     padding: 0;
@@ -7,10 +11,15 @@
     box-sizing: border-box;
 }
 
+body, html, #root, #__next {
+    height: 100%;
+    width: 100%;
+}
+
 // common mixins
 @mixin flex-center {
     display: flex;
-    justify-content: cneter;
+    justify-content: center;
     align-items: center;
 }
 

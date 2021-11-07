@@ -1,2 +1,38 @@
 @import './config';
 @import './components/home';
+@import './components/search';
+@import './components/confirm';
+@import './components/shared';
+
+// common components
+.btn {
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    @include transition-ease;
+    box-sizing: border-box;
+}
+
+.input {
+    padding: 9px 7px;
+    font-family: 'Nunito' sans-serif;
+    font-size: .9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary-color;
+    @include transition-ease;
+
+    &:focus {
+        // outline: 1px solid gray;
+        outline: none;
+        transform: scale(1.03);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+}
