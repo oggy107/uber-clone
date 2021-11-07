@@ -1,18 +1,30 @@
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoib2dneTEwNyIsImEiOiJja3ZtNmY4dzUwd2Z2MnhvdTl6N2V0NGo1In0.LX7l4VohHYFMpz70nCv5qw'
+import { accessToken } from '../../config/config'
+import {addMarker} from '../../helpers/Helpers'
 
-const Map = () => {
+mapboxgl.accessToken = accessToken
+
+const Map = ({pickupCoordinates, dropoffCoordinates}) => {
+
     React.useEffect(() => {
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
         })
-    }, [])
+
+        if ((pickupCoordinates && dropoffCoordinates) && (pickupCoordinates.length && dropoffCoordinates.length))
+        {
+            map.setCenter(pickupCoordinates)
+            map.zoomTo(8)
+            addMarker(map, pickupCoordinates)
+            addMarker(map, dropoffCoordinates)
+        }
+    })
 
     return (
-        <div id="map" style={{width: '100%', height: '100%'}}/>            
+        <div id="map" style={{flex: 1}}/>
     )
 }
 

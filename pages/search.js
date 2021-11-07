@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import SearchForm from '../components/search/SearchForm'
 
-const search = () => {
+const Search = () => {
     return (
         <div className="searchMajorContainer">
             <div className="searchMinorContainer">
@@ -29,4 +29,4 @@ const search = () => {
     )
 }
 
-export default search
+export default Search
