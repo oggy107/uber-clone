@@ -24,7 +24,7 @@
     font-size: .9rem;
     border: none;
     border-radius: 5px;
-    background-color: rgb(255, 173, 186);
+    background-color: $primary-color;
     @include transition-ease;
 
     &:focus {
