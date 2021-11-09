@@ -15,15 +15,6 @@ const Search = () => {
                     </div>
                 </Link>
                 <SearchForm />
-                <div className="searchSavedPlacesContainer">
-                    <div className="searchSavedPlacesImgContainer">
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"/>
-                    </div>
-                    <h3>Saved Places</h3>
-                </div>
-                <Link href="/confirm">
-                    <button className="btn searchConfirmBtn">Confirm Locations</button>
-                </Link>
             </div>
         </div>
     )

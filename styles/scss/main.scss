@@ -20,6 +20,12 @@
     box-sizing: border-box;
 }
 
+.disabled {
+    background-color: rgb(170, 170, 170);
+    color: rgb(228, 227, 227);
+    opacity: 0.5;
+}
+
 .input {
     padding: 9px 7px;
     font-family: 'Nunito' sans-serif;

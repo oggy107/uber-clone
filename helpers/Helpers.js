@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 import { accessToken } from '../config/config'
 
 const fetchData = async (url) => {
-    return fetch(url).then((resp) => {
+    return fetch(url).then(async (resp) => {
         return resp.json().then((data) => {return data}).catch((err) => {console.error("[ERROR]:", err)})
     }).catch((err) => {console.error("[ERROR]:", err)})
 }
