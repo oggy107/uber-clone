@@ -1,5 +1,6 @@
 import React from 'react'
 import Lottie from 'react-lottie'
+import Link from 'next/link'
 
 import rides from '../assets/files/carList'
 import { getDirections } from '../../helpers/Helpers'
@@ -9,6 +10,7 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
     const [isLoading, setIsLoading]  = React.useState(true)
     
     const handleClick = () => {
+        
     }
     
     React.useEffect(async () => {
@@ -33,7 +35,9 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
             <div className="confirmBody">
                 <Header />
                 <RideSelection directions={directions}/>
-                <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
+                <Link href="/booked">
+                    <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
+                </Link>
             </div>
         )
     }
