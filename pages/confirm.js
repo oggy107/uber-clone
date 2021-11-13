@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
+import Lottie from 'react-lottie'
 
 import Map from '../components/shared/Map'
 import ConfirmBody from '../components/confirm/ConfirmBody'
@@ -22,21 +23,13 @@ const Confirm = () => {
         setDropoffCoordinates(dropOff)
 
         setIsLoading(false)
-
-        // getCoordinates(locations.pickup).then((pickup) => {
-        //     setPickupCoordinates(pickup)
-        //     getCoordinates(locations.dropoff).then((dropoff) => {
-        //         setDropoffCoordinates(dropoff)
-        //         setIsLoading(false)
-        //     })
-        // })
     }, [])
 
     if (isloading)
     {
         return (
             <div className="confirmContainer">
-                <h2>loading.....</h2>
+                <Lottie options={{animationData: require('../components/assets/lottie/car-loading.json')}}/>
             </div>
         )
     }
