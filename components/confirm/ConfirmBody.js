@@ -1,23 +1,51 @@
 import React from 'react'
-import Link from 'next/link'
 
 import rides from '../assets/files/carList'
+import { getDirections } from '../../helpers/Helpers'
 
-const ConfirmBody = () => {
-    return (
-        <div className="confirmBody">
-            <Link href="/search">
-                <div className="confirmBackBtnContainer">
-                    <button className="btn confirmBackBtn">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/left.png" alt="back"/>
-                    </button>
-                </div>
-            </Link>
-            <Header />
-            <RideSelection />
-            <button className="confirmConfirmBtn btn">Confirm UberX</button>
-        </div>
-    )
+const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
+    const [directions, setDirections] = React.useState({})
+    const [isLoading, setIsLoading]  = React.useState(true)
+    
+    const handleClick = () => {
+    }
+    
+    React.useEffect(async () => {
+        const coordinates = `${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}`
+        const data = await getDirections('driving', coordinates)
+        setDirections(data)
+        setIsLoading(false)
+    }, [])
+
+    if (isLoading)
+    {
+        return (
+            <div className="confirmBody">
+                <h2>loading...</h2>
+            </div>
+        )
+    }
+
+
+    if (directions)
+    {
+        return (
+            <div className="confirmBody">
+                <Header />
+                <RideSelection directions={directions}/>
+                <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
+            </div>
+        )
+    }
+    else
+    {
+        return (
+            <div className="confirmBody">
+                <h2>flying ubers are not yet available</h2>
+            </div>
+        )
+    }
+
 }
 
 const Header = () => {
@@ -28,7 +56,7 @@ const Header = () => {
     )
 }
 
-const RideSelection = () => {
+const RideSelection = ({directions}) => {
     return (
         <div className="confirmRideSelectionContainer">
             {
@@ -42,7 +70,7 @@ const RideSelection = () => {
                                     <p className="confirmRideArrivalTime">5 min away</p>
                                 </div>
                             </div>
-                            <p className="confirmRidePrice">$0.00</p>
+                            <p className="confirmRidePrice">{`$${(directions.distance * ride.multiplier).toFixed(2)}`}</p>
                         </div>
                     )
                 })
