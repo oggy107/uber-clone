@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
 
 const SearchForm = () => {
@@ -9,11 +8,11 @@ const SearchForm = () => {
 
     const handleClick = (eo) => {
         eo.preventDefault()
+
         if (pickup && dropoff)
-        {
-            eo.target.classList.remove('disabled')
             router.push(`/confirm?pickup=${pickup}&dropoff=${dropoff}`)
-        }
+
+        // CAN ADD USER FEEDBACK
     }
 
     return (
@@ -41,7 +40,7 @@ const SearchForm = () => {
                 <h3>Saved Places</h3>
             </div>
             <button type="submit" onClick={(eo) => {handleClick(eo)}} className={(pickup && dropoff) ? "btn searchConfirmBtn" : "btn searchConfirmBtn disabled"}>Confirm Locations</button>
-    </form>
+        </form>
     )
 }
 
