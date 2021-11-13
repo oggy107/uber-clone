@@ -1,15 +1,56 @@
 import React from 'react'
+import Lottie from 'react-lottie'
+import Link from 'next/link'
 
 import rides from '../assets/files/carList'
+import { getDirections } from '../../helpers/Helpers'
 
-const ConfirmBody = () => {
-    return (
-        <div className="confirmBody">
-            <Header />
-            <RideSelection />
-            <button className="confirmConfirmBtn btn">Confirm UberX</button>
-        </div>
-    )
+const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
+    const [directions, setDirections] = React.useState({})
+    const [isLoading, setIsLoading]  = React.useState(true)
+    
+    const handleClick = () => {
+        
+    }
+    
+    React.useEffect(async () => {
+        const coordinates = `${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}`
+        const data = await getDirections('driving', coordinates)
+        setDirections(data)
+        setIsLoading(false)
+    }, [])
+
+    if (isLoading)
+    {
+        return (
+            <div className="confirmBody">
+                <Lottie options= {{animationData: require('../assets/lottie/loading.json')}}/>
+            </div>
+        )
+    }
+
+    if (directions)
+    {
+        return (
+            <div className="confirmBody">
+                <Header />
+                <RideSelection directions={directions}/>
+                <Link href="/booked">
+                    <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
+                </Link>
+            </div>
+        )
+    }
+    else
+    {
+        return (
+            <div className="confirmBody">
+                <Lottie width='100%' height='50%' options={{animationData: require('../assets/lottie/dragon.json')}}/>
+                <h2 style={{textAlign: 'center', marginTop: 50}}>prefer riding this instead</h2>
+            </div>
+        )
+    }
+
 }
 
 const Header = () => {
@@ -20,7 +61,7 @@ const Header = () => {
     )
 }
 
-const RideSelection = () => {
+const RideSelection = ({directions}) => {
     return (
         <div className="confirmRideSelectionContainer">
             {
@@ -34,7 +75,7 @@ const RideSelection = () => {
                                     <p className="confirmRideArrivalTime">5 min away</p>
                                 </div>
                             </div>
-                            <p className="confirmRidePrice">$0.00</p>
+                            <p className="confirmRidePrice">{`$${(directions.distance * ride.multiplier).toFixed(2)}`}</p>
                         </div>
                     )
                 })

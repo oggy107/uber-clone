@@ -1,0 +1,12 @@
+.bookedContainer {
+    & h1 {
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+    }
+
+    & .bookedHomeBtnContainer {
+        width: 100%;
+        margin-top: 2rem;
+        @include flex-center;
+    }
+}

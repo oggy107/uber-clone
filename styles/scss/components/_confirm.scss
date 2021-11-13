@@ -5,6 +5,18 @@
     flex-direction: column;
     font-family: 'Nunito', sans-serif;
 
+    & .confirmBackBtnContainer {
+        & .confirmBackBtn {
+            z-index: 100;
+            background-color: #fff;
+            padding: 0;
+            @include flex-center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    }
+
     & .confirmMap {
         flex: 1;
     }
@@ -13,6 +25,17 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+
+        // & .confirmBackBtnContainer {
+        //     & .confirmBackBtn {
+        //         background-color: #fff;
+        //         padding: 0;
+        //         @include flex-center;
+        //         position: absolute;
+        //         top: 10px;
+        //         left: 10px;
+        //     }
+        // }
 
         & .confirmHeaderContainer {
             flex: 1;

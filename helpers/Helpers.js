@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 import { accessToken } from '../config/config'
 
 const fetchData = async (url) => {
-    return fetch(url).then((resp) => {
+    return fetch(url).then(async (resp) => {
         return resp.json().then((data) => {return data}).catch((err) => {console.error("[ERROR]:", err)})
     }).catch((err) => {console.error("[ERROR]:", err)})
 }
@@ -22,4 +22,19 @@ const addMarker = (map, coordinates) => {
             .addTo(map);
 }
 
-export { getCoordinates, fetchData, addMarker }
+const getDirections = async (profile, coordinates) => {
+    const apiUrl = `https://api.mapbox.com/directions/v5/mapbox/${profile}/${coordinates}?access_token=${accessToken}`
+    const data = await fetchData(apiUrl)
+    console.log(data)
+    if (data.code === 'Ok')
+        {
+            return {
+                distance: data.routes[0].distance / 1000,
+                duration: data.routes[0].duration
+            }
+        }
+        else
+            return null
+}
+
+export { getCoordinates, fetchData, addMarker, getDirections }
