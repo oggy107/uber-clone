@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
 import Lottie from 'react-lottie'
 
-import Map from '../components/shared/Map'
-import ConfirmBody from '../components/confirm/ConfirmBody'
-import { getCoordinates } from '../helpers/Helpers'
-import useAuthentication from '../auth/auth'
+import Map from '../../app/components/shared/Map'
+import ConfirmBody from '../../app/components/confirm/ConfirmBody'
+import { getCoordinates } from '../../app/helpers/Helpers'
+import useAuthentication from '../../app/auth/auth'
 
 const Confirm = () => {
     useAuthentication()
@@ -32,7 +32,7 @@ const Confirm = () => {
     {
         return (
             <div className="confirmContainer">
-                <Lottie options={{animationData: require('../components/assets/lottie/car-loading.json')}}/>
+                <Lottie options={{animationData: require('../../app/assets/lottie/car-loading.json')}}/>
             </div>
         )
     }

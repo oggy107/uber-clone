@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import { auth } from '../../config/firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useRouter } from 'next/dist/client/router'
 
-import actionBtns from '../assets/files/actionBtns'
+import actionBtns from '../../assets/files/actionBtns'
+import { auth } from '../../config/firebase'
 
 const defaultUser = {
     name: 'Anonymous',

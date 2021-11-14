@@ -2,7 +2,7 @@ import React from 'react'
 import Lottie from 'react-lottie'
 import Link from 'next/link'
 
-import rides from '../assets/files/carList'
+import rides from '../../assets/files/carList'
 import { getDirections } from '../../helpers/Helpers'
 
 const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
@@ -20,7 +20,7 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
     {
         return (
             <div className="confirmBody">
-                <Lottie options= {{animationData: require('../assets/lottie/loading.json')}}/>
+                <Lottie options= {{animationData: require('../../assets/lottie/loading.json')}}/>
             </div>
         )
     }
@@ -38,7 +38,7 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
     {
         return (
             <div className="confirmBody">
-                <Lottie width='100%' height='50%' options={{animationData: require('../assets/lottie/dragon.json')}}/>
+                <Lottie width='100%' height='50%' options={{animationData: require('../../assets/lottie/dragon.json')}}/>
                 <h2 style={{textAlign: 'center', marginTop: 50}}>prefer riding this instead</h2>
             </div>
         )
@@ -79,7 +79,7 @@ const RideSelection = ({directions}) => {
                     )
                 })
             }
-            <Link href="/booked">
+            <Link href="/confirm/booked">
                     <button className="confirmConfirmBtn btn">Confirm {rides[selected].service}</button>
             </Link>
         </div>

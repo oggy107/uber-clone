@@ -3,7 +3,7 @@ import Lottie from 'react-lottie'
 import { useRouter } from 'next/dist/client/router'
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth'
 
-import {auth, provider} from '../config/firebase'
+import {auth, provider} from '../app/config/firebase'
 
 const login = () => {
     const router = useRouter()
@@ -22,7 +22,7 @@ const login = () => {
                 <img src="https://i.ibb.co/n6LWQM4/Post.png" alt="logo" />
             </div>
             <div className="loginAnimationContainer">
-                <Lottie options={{animationData: require('../components/assets/lottie/car-loading.json')}}/>
+                <Lottie options={{animationData: require('../app/assets/lottie/car-loading.json')}}/>
             </div>
             <h1>Log in to access your account</h1>
             <div className="loginBtnContainer">
