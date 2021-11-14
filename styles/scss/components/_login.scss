@@ -1,0 +1,19 @@
+.loginContainer {
+    padding: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+
+    & .loginLogoContainer {
+        & img {
+            width: 10rem;
+        }
+    }
+
+    & h1 {
+        text-align: center;
+    }
+
+    & .loginBtnContainer {
+        @include flex-center;
+        margin-top: 2rem;
+    }
+}

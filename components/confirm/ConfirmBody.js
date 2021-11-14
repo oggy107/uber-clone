@@ -14,7 +14,7 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
         const data = await getDirections('driving', coordinates)
         setDirections(data)
         setIsLoading(false)
-    }, [])
+    }, [pickupCoordinates, dropoffCoordinates])
 
     if (isLoading)
     {
