@@ -1,5 +1,5 @@
-import { parseUrl } from 'next/dist/shared/lib/router/utils/parse-url'
 import mapboxgl from 'mapbox-gl'
+import { parseUrl } from 'next/dist/shared/lib/router/utils/parse-url'
 
 import { accessToken } from '../config/config'
 

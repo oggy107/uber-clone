@@ -1,9 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 
-import SearchForm from '../components/search/SearchForm'
+import useAuthentication from '../app/auth/auth'
+import SearchForm from '../app/components/search/SearchForm'
 
 const Search = () => {
+    useAuthentication()
+
     return (
         <div className="searchMajorContainer">
             <div className="searchMinorContainer">
