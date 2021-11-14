@@ -6,8 +6,11 @@ import Lottie from 'react-lottie'
 import Map from '../components/shared/Map'
 import ConfirmBody from '../components/confirm/ConfirmBody'
 import { getCoordinates, addMarker } from '../helpers/Helpers'
+import useAuthentication from '../auth/auth'
 
 const Confirm = () => {
+    useAuthentication()
+
     const [pickupCoordinates, setPickupCoordinates] = React.useState([])
     const [dropoffCoordinates, setDropoffCoordinates] = React.useState([])
     const [isloading, setIsLoading] = React.useState(true)
