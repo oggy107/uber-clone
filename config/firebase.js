@@ -5,6 +5,8 @@ import {GoogleAuthProvider, getAuth} from 'firebase/auth'
 const firebaseConfig = {
   apiKey: "AIzaSyAnIMJOVFWzfBULVk2druRXVQpBxcsVH10",
   authDomain: "uber-clone-a2e7b.firebaseapp.com",
+  // authDomain: "localhost",
+  // authDomain: "uber-clone-a2e7b.web.app",
   projectId: "uber-clone-a2e7b",
   storageBucket: "uber-clone-a2e7b.appspot.com",
   messagingSenderId: "351644027420",
