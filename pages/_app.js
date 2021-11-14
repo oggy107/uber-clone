@@ -1,4 +1,3 @@
-// import '../styles/globals.css'
 import '../styles/main.css'
 
 import 'mapbox-gl/dist/mapbox-gl.css'

@@ -31,9 +31,6 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
             <div className="confirmBody">
                 <Header />
                 <RideSelection directions={directions}/>
-                {/* <Link href="/booked">
-                    <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
-                </Link> */}
             </div>
         )
     }

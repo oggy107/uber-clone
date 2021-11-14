@@ -11,8 +11,6 @@ const SearchForm = () => {
 
         if (pickup && dropoff)
             router.push(`/confirm?pickup=${pickup}&dropoff=${dropoff}`)
-
-        // CAN ADD USER FEEDBACK
     }
 
     return (

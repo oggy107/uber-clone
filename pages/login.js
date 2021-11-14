@@ -1,7 +1,8 @@
 import React from 'react'
 import Lottie from 'react-lottie'
 import { useRouter } from 'next/dist/client/router'
-import { signInWithPopup, onAuthStateChanged, GoogleAuthProvider } from 'firebase/auth'
+import { signInWithPopup, onAuthStateChanged } from 'firebase/auth'
+
 import {auth, provider} from '../config/firebase'
 
 const login = () => {
