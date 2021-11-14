@@ -8,11 +8,7 @@ import { getDirections } from '../../helpers/Helpers'
 const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
     const [directions, setDirections] = React.useState({})
     const [isLoading, setIsLoading]  = React.useState(true)
-    
-    const handleClick = () => {
-        
-    }
-    
+
     React.useEffect(async () => {
         const coordinates = `${pickupCoordinates[0]},${pickupCoordinates[1]};${dropoffCoordinates[0]},${dropoffCoordinates[1]}`
         const data = await getDirections('driving', coordinates)
@@ -35,9 +31,9 @@ const ConfirmBody = ({pickupCoordinates, dropoffCoordinates}) => {
             <div className="confirmBody">
                 <Header />
                 <RideSelection directions={directions}/>
-                <Link href="/booked">
+                {/* <Link href="/booked">
                     <button className="confirmConfirmBtn btn" onClick={() => {handleClick()}}>Confirm UberX</button>
-                </Link>
+                </Link> */}
             </div>
         )
     }
@@ -62,12 +58,18 @@ const Header = () => {
 }
 
 const RideSelection = ({directions}) => {
+    const [selected, setSelected] = React.useState(0)
+
+    const handleClick = (index) => {
+        setSelected(index)
+    }
+
     return (
         <div className="confirmRideSelectionContainer">
             {
                 rides.map((ride, index) => {
                     return (
-                        <div className="confirmRideContainer" key={index}>
+                        <div onClick={() => {handleClick(index)}} className={(selected === index) ? "confirmRideContainer selected" : "confirmRideContainer"} key={index}>
                             <div className="confirmRideProfileContainer">
                                 <img className="confirmRideImg" src={ride.imgUrl} alt={ride.service} />
                                 <div>
@@ -80,6 +82,9 @@ const RideSelection = ({directions}) => {
                     )
                 })
             }
+            <Link href="/booked">
+                    <button className="confirmConfirmBtn btn">Confirm {rides[selected].service}</button>
+            </Link>
         </div>
     )
 }
