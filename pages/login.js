@@ -1,7 +1,20 @@
 import React from 'react'
 import Lottie from 'react-lottie'
+import { useRouter } from 'next/dist/client/router'
+import { signInWithPopup, onAuthStateChanged, GoogleAuthProvider } from 'firebase/auth'
+import {auth, provider} from '../config/firebase'
 
 const login = () => {
+    const router = useRouter()
+
+    React.useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                router.push('/')
+            }
+        })
+    }, [])
+
     return (
         <div className="loginContainer">
             <div className="loginLogoContainer">
@@ -12,7 +25,7 @@ const login = () => {
             </div>
             <h1>Log in to access your account</h1>
             <div className="loginBtnContainer">
-                <button className="btn"><h2>Sign in with Google</h2></button>
+                <button className="btn" onClick={() => {signInWithPopup(auth, provider)}}><h2>Sign in with Google</h2></button>
             </div>
         </div>
     )
